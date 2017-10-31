@@ -7,4 +7,4 @@
 *.iml
 out
 gen
-.gitignore
+*ipa
