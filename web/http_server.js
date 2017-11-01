@@ -1,6 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
+var port = 8081;
 
 function hasSuffix(str,suffix) { 
  return str.indexOf(suffix,this.length - suffix.length)!==-1; 
@@ -31,16 +32,30 @@ http.createServer( function (request, response) {
              response.writeHead(200, {'Content-Type': 'text/html'});
              response.write(data.toString());
 
-         }else{
-             response.writeHead(200, {"Content-Type": "image/png"});
+         }else if (hasSuffix(pathname,'png')) {
+              response.writeHead(200, {"Content-Type": "image/png"});
+              response.write(data,'binary');
+          }else{
              response.write(data,'binary');
-         }
+           }
          // 响应文件内容
       }
       //  发送响应数据
       response.end();
    });   
-}).listen(8081);
+}).listen(port);
 
+var os=require('os'),
+    iptable={},
+    ifaces=os.networkInterfaces();
+for (var dev in ifaces) {
+  ifaces[dev].forEach(function(details,alias){
+    if (details.family=='IPv4') {
+      iptable[dev+(alias?':'+alias:'')]=details.address;
+    }
+  });
+}
+console.log(iptable);
+console.log('Server running at http://'+iptable['en0:1']+':8081/');
 // 控制台会输出以下信息
-console.log('Server running at http://127.0.0.1:8081/');
+// console.log();
