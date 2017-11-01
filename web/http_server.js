@@ -32,15 +32,14 @@ http.createServer( function (request, response) {
              response.writeHead(200, {'Content-Type': 'text/html'});
              response.write(data.toString());
 
-         }else if (hasSuffix(pathname,'png')) {
+         }else if (hasSuffix(pathname,'png')){
               response.writeHead(200, {"Content-Type": "image/png"});
               response.write(data,'binary');
           }else{
-             response.write(data,'binary');
-           }
-         // 响应文件内容
+              response.writeHead(200, "Ok");
+              response.write(data,'binary');
+          }
       }
-      //  发送响应数据
       response.end();
    });   
 }).listen(port);
