@@ -31,7 +31,6 @@ http.createServer( function (request, response) {
          if (hasSuffix(pathname,'html')) {
              response.writeHead(200, {'Content-Type': 'text/html'});
              response.write(data.toString());
-
          }else if (hasSuffix(pathname,'png')){
               response.writeHead(200, {"Content-Type": "image/png"});
               response.write(data,'binary');
@@ -44,6 +43,7 @@ http.createServer( function (request, response) {
    });   
 }).listen(port);
 
+//获取本机IP地址
 var os=require('os'),
     iptable={},
     ifaces=os.networkInterfaces();
@@ -56,5 +56,3 @@ for (var dev in ifaces) {
 }
 console.log(iptable);
 console.log('Server running at http://'+iptable['en0:1']+':8081/');
-// 控制台会输出以下信息
-// console.log();
