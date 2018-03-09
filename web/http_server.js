@@ -3,17 +3,17 @@ var fs = require('fs');
 var url = require('url');
 var port = 8081;
 
-function hasSuffix(str,suffix) { 
- return str.indexOf(suffix,this.length - suffix.length)!==-1; 
-}; 
+function hasSuffix(str,suffix) {
+ return str.indexOf(suffix,this.length - suffix.length)!==-1;
+};
 // 创建服务器
-http.createServer( function (request, response) {  
+http.createServer( function (request, response) {
    // 解析请求，包括文件名
    var pathname = url.parse(request.url).pathname;
-   
+
    // 输出请求的文件名
    console.log("Request for " + pathname + " received.");
-   
+
    // 从文件系统中读取请求的文件内容
    console.log("pathname=="+pathname);
    if (pathname == '/') {
@@ -25,7 +25,8 @@ http.createServer( function (request, response) {
          // HTTP 状态码: 404 : NOT FOUND
          // Content Type: text/plain
          response.writeHead(404, {'Content-Type': 'text/html'});
-      }else{             
+         response.write("页面未找到");
+      }else{
          // HTTP 状态码: 200 : OK
          // Content Type: text/plain
          if (hasSuffix(pathname,'html')) {
@@ -40,7 +41,7 @@ http.createServer( function (request, response) {
           }
       }
       response.end();
-   });   
+   });
 }).listen(port);
 
 //获取本机IP地址
