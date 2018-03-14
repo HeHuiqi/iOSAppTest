@@ -1,4 +1,7 @@
 # iOSAppTest
+## [简书主页]( https://www.jianshu.com/u/b37773b21ff3)
+
+## 这是一个用于iOSApp测试的NodeJSWeb项目
 
 ## iOS通itms-services://协议安装ipa，省去https环境的搭建
 
