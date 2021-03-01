@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://172.100.1.151:8081/SolarWallet.ipa</string>
+					<string>https://cpms.it.chinamobile.com/pms/cpms_apps/pms_ios_1.0.0.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
