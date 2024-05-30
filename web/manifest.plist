@@ -11,31 +11,19 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>https://cpms.it.chinamobile.com/pms/cpms_apps/pms_ios_1.0.0.ipa</string>
-				</dict>
-				<dict>
-					<key>kind</key>
-					<string>display-image</string>
-					<key>url</key>
-					<string>https://www.baidu.com</string>
-				</dict>
-				<dict>
-					<key>kind</key>
-					<string>full-size-image</string>
-					<key>url</key>
-					<string>https://www.baidu.com</string>
+					<string>https://admin.royalcasino777.net/prod-api/profile/upload/2024/05/29/Royal Casino_20240529204937A009.ipa</string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.SolarSoft.SolarWallet</string>
+				<string>com.royal777.casino</string>
 				<key>bundle-version</key>
-				<string>1.0</string>
+				<string>1.0.1</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>chjz.0</string>
+				<string>Royal Casino</string>
 			</dict>
 		</dict>
 	</array>
